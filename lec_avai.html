@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecturer Availability</title>
+    <link rel="stylesheet" href="lec_ava.css">
+</head>
+    <body>
+        <header>
+            <div class="header-left">
+                <img src="logo.png" alt="University Logo" class="logo">
+            </div>
+            <nav class="header-right">
+                <ul>
+                    <li><a href="index.html">Homepage</a></li>
+                    <li><a href="lec_avai.html">Lecturer Availability</a></li>
+                    <li><a href="appoinment.html">Book Appointment</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+                <div class="profile-icon">
+                    <img src="pro.jpg" alt="Profile Icon">
+                </div>
+            </nav>
+        </header>
+    
+        <main class="content">
+            <section class="availability-list" id="availability-list">
+                <!-- Lecturer availability will be inserted here -->
+            </section>
+        
+            <script>
+                // Get lecturer data from localStorage
+                const lecturerList = JSON.parse(localStorage.getItem('lecturerList')) || [];
+        
+                // Display data
+                const availabilityListElement = document.getElementById('availability-list');
+        
+                if (lecturerList.length === 0) {
+                    availabilityListElement.innerHTML = '<p>No lecturer availability found.</p>';
+                } else {
+                    lecturerList.forEach((lecturer) => {
+                        const lecturerElement = document.createElement('div');
+                        lecturerElement.classList.add('lecturer');
+                        
+                        lecturerElement.innerHTML = `
+                            <h2>${lecturer.lecturerName}</h2>
+                            <p><strong>Available Time:</strong> ${lecturer.startTime} - ${lecturer.endTime}</p>
+                            <p><strong>Date:</strong> ${lecturer.availableDate}</p>
+                            <p><strong>Location:</strong> ${lecturer.location}</p>
+                            <a href="appointment.html" class="button">Book Appointment</a>
+                        `;
+                        
+                        availabilityListElement.appendChild(lecturerElement);
+                    });
+                }
+            </script>
+        </main>
+    
+        <footer>
+            <p>&copy; 2024 Computer Science Department. All rights reserved.</p>
+        </footer>
+    </body>
+    </html>

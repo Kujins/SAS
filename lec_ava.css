@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+}
+
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #20368f;
+    color: white;
+    padding: 20px 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-left .logo {
+    width: 300px;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.header-left h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-right ul {
+    list-style-type: none;
+    display: flex;
+    margin-right: 30px;
+}
+
+.header-right ul li {
+    margin-left: 20px;
+}
+
+.header-right ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.header-right ul li a:hover {
+    background-color: white;
+    color: #20368f;
+    border-radius: 5px;
+    border: 2px solid white;
+}
+
+.profile-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Main Content */
+
+
+/* Footer */
+footer {
+    background-color: #20368f;
+    color: white;
+    text-align: center;
+    padding: 25px 0px;
+    position: relative;
+    bottom: 5px;
+    width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-right ul {
+        display: none;
+    }
+    
+    .header-right {
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    
+    .profile-icon {
+        margin-top: 10px;
+    }
+}
+        /* Section for forms and appointment display */
+        section {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white; /* Slightly lighter black for sections */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(57, 21, 235, 0.6); /* Radiant glow effect */
+            display: grid;
+            
+        }
+
+        /* Lecturer styling */
+        .lecturer {
+            background-color: white; /* Slightly lighter black for each lecturer */
+            padding: 5px;
+            margin-bottom: 20px;
+            border: 1px solid #1616c9; /* Radiant border */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(44, 19, 230, 0.6); /* Radiant glow effect */
+            
+        }
+
+        h2 {
+            color: #2815d3; /* Radiant yellow for lecturer names */
+        }
+
+        /* Link styling for buttons */
+        a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(90deg, #ff6ec7, #ffc93c);  /* Radiant gradient */
+            color: white;
+            text-decoration: none; /* Remove underline */
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        a.button:hover {
+            background: linear-gradient(90deg, #470bdf, #795aeb); /* Reverse gradient on hover */
+        }
